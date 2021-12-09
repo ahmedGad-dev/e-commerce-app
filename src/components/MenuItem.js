@@ -1,10 +1,11 @@
 import React from "react";
 import  './components.styles.scss'
+import { withRouter } from "react-router-dom";
 //import { sections } from "../directory.data";
 
 const MenuItem = (props) => {
     return(
-        <div className={`${props.size} menu-item`}>          
+        <div className={`${props.size} menu-item`} onClick={()=> props.history.push(`${props.match.url}${props.linkUrl}`)}>          
             <div className="background-image" style={{backgroundImage:`url(${props.imageUrl})`}}></div>           
                 <div className={"content"}>
                     <h1 className="title">{props.title.toUpperCase()}</h1>
@@ -14,4 +15,4 @@ const MenuItem = (props) => {
     )
 }
 
-export default MenuItem
+export default withRouter(MenuItem)
