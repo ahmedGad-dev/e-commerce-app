@@ -1,6 +1,6 @@
 import React from "react";
-import './components.styles.scss'
-import CollectionItem from "./CollectionItem";
+import './collection-prev.styles.scss'
+import CollectionItem from "../../components/collection-item/CollectionItem"
 
 const CollectionPrev = ({title, items}) => {
     return(

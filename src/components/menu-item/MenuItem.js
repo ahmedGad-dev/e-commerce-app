@@ -1,5 +1,5 @@
 import React from "react";
-import  './components.styles.scss'
+import  './menu-item.styles.scss'
 import { withRouter } from "react-router-dom";
 //import { sections } from "../directory.data";
 

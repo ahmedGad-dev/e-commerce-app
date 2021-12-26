@@ -1,6 +1,6 @@
 import React from 'react'
 import SHOP_DATA from '../../shop.data'
-import CollectionPrev from '../../components/CollectionPrev'
+import CollectionPrev from '../../components/collection-prev/CollectionPrev'
 import './ShopPage.styles.scss'
 
 class Shop extends React.Component{

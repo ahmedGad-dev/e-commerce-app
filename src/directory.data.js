@@ -1,7 +1,7 @@
 export const sections = [
   {
     title: 'hats',
-    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+    imageUrl: 'https://i.ibb.co/w6Mq3Ww/hollywood-1639765230782-9952.jpg',
     id: 1,
     linkUrl: 'shop/hats'
   },
