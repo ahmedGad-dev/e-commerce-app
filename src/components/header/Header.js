@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import{ connect } from  'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import './header.styles.scss'
 import {ReactComponent as Logo} from '../../assets/crown.svg'
 import CartDropdown from '../cart-dropdown/CartDropDown'
@@ -17,7 +19,7 @@ const Header = ({hidden}) => {
 
           <div className='options'> 
             <Link to='/shop' className='option'> SHOP </Link>
-            <Link to='/signin' className='option'> CONTACT </Link>   
+            <Link to='/signin' className='option'> SIGNUP </Link>   
             <CartIcon />        
           </div>
          {
@@ -27,8 +29,8 @@ const Header = ({hidden}) => {
     )
 }
 
-const mapStateToProps = ({ cart: {hidden} }) => ({
-   hidden
-});
+const mapStateToProps = createStructuredSelector({
+  hidden: selectCartHidden
+})
 
 export default connect(mapStateToProps)(Header)
