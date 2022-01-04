@@ -21,7 +21,7 @@ const  INITIAL_STATE = {
         case CartActionTypes.REMOVE_ITEM:
             return{
                 ...state,
-                cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id)
+                cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id) //filter keeps anything that results to true and filters out the rest
             }
         case CartActionTypes.ARROW_REMOVE:
             return{
