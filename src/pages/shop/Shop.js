@@ -1,20 +1,22 @@
 import React from 'react'
-
-import {Route} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import './ShopPage.styles.scss'
 import CollectionsOverview from '../../components/collections-overview/CollectionsOverview'
 import Collection from '../collection/Collection'
+import { useParams } from 'react-router-dom'
 
-
-const Shop = ({match}) =>{
-  return(
+const Shop = () =>{
+   const params = useParams()
+   return(
       <div className='shop-page'> 
-        
-         <Route exact path={`${match.path}`} component={CollectionsOverview}/>
-         <Route path={`${match.path}/:id`} component={Collection}/>
-       
+         <Routes>        
+            <Route path='/' element={<CollectionsOverview/>}>
+              <Route path='/:collectionId' element={<Collection/>} />
+            </Route>
+         </Routes>      
       </div>
-  )
-}
+     )
+  }  
 
 export default Shop
+

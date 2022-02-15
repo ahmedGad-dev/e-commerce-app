@@ -5,7 +5,8 @@ import CollectionItem from "../../components/collection-item/CollectionItem";
 import { selectShopCollection } from "../../redux/shop/shop.selectors";
 
 
-const Collection = ({collection}) =>{
+
+const Collection = ({collection}) =>{   
     const { title, items} = collection
     return(
         <div className="collection-page">
@@ -19,8 +20,8 @@ const Collection = ({collection}) =>{
      ) 
 }
 
-const mapStateToProps = (state, ownProps) =>({
-    collection: selectShopCollection(ownProps.match.params.id)(state)
+const mapStateToProps = (state, props) =>({
+    collection: selectShopCollection(props.match.params.collectionId)(state)
 })
 
 export default connect(mapStateToProps)(Collection)
